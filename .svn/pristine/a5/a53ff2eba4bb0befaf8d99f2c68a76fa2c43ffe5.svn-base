@@ -1,0 +1,6 @@
+<link href="/css/home.css" rel="stylesheet">
+<div>
+	<div class="row">
+		<img class="" src="/images/home_img.png" style="float: right;">
+	</div>
+</div>

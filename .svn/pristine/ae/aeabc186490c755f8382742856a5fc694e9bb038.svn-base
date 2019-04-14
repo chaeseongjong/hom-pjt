@@ -1,0 +1,40 @@
+package com.seongjong.chae;
+
+import java.util.ArrayList;
+import java.util.Locale;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+/**
+ * Handles requests for the application home page.
+ */
+@Controller
+public class DownloadController {
+	
+	private static final Logger logger = LoggerFactory.getLogger(DownloadController.class);
+	
+	/**
+	 * Simply selects the home view to render by returning its name.
+	 */
+	@RequestMapping(value = "/download", method = RequestMethod.GET)
+	public String download(Locale locale, Model model) {
+		logger.info("다운로드 페이지 접속 {}.", locale);
+		
+		// 파일 이름을 저장할 객체 생성
+		ArrayList<String> downloadArrayList = new ArrayList<String>();
+		
+		//파일을 객체에 저장 하기 위한 for 문  (현재 테스트로 for 문 조건부에다가 file<10이라고 적어놨는데 10 대신 fileList.size() 입력해야함 )
+		for(int file = 0; file<10; file++) 
+			downloadArrayList.add("파일"+file);
+		// 파일 이름이 적혀 있는 ArrayList를 jsp에 전달
+		model.addAttribute("fileList",downloadArrayList );
+		logger.info("전송 데이터 : {}", downloadArrayList);
+		// 리턴할 url 주소 (/download를 주소창에 입력하면 /download.jsp가 열림 리턴값을 home으로 하면 /home.jsp가 열림!)
+		return "download";
+	}
+	
+}
