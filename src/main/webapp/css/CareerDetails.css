@@ -1,0 +1,21 @@
+ .CareerDetails{
+    position: relative;
+	padding : 50px
+}
+
+
+ .CareerDetails_img{
+	padding : 50px
+}
+
+.square {
+    position: relative;
+    width: 100px;
+    height: 224px;
+    background: red;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    margin-right: 150px;
+    margin-left: 276px;
+    border-radius:10px;
+}
