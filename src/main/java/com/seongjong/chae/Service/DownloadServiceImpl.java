@@ -10,7 +10,7 @@ public class DownloadServiceImpl implements DownloadService{
 	@Override
 	public ArrayList<String> getFileList(){
 		
-		//ArrayList<DownloadSVO> Files = new ArrayList<DownloadSVO>(); 확장성을 위해서...(나중에 다른정보를 넣어야 할지 모르니.....)1
+		//ArrayList<DownloadSVO> Files = new ArrayList<DownloadSVO>(); 확장성을 위해서...(나중에 다른정보를 넣어야 할지 모르니.....)
 		ArrayList<String> Files = new ArrayList<String>();
 		// 폴더 
 		File Folder = new File(Path);
@@ -19,7 +19,7 @@ public class DownloadServiceImpl implements DownloadService{
 		// 파일 리스트 가져오기
 		File[] Filelist = Folder.listFiles();
 		// 파일 리스트에서 파일이 있으면 Files 객체에 파일 이름 넣기
-		//for(File file:Filelist) if(file.isFile()) Files.add(new DownloadSVO(file.getName()));확장성을 위해서...2
+		//for(File file:Filelist) if(file.isFile()) Files.add(new DownloadSVO(file.getName()));확장성을 위해서...
 		for(File file:Filelist) if(file.isFile()) Files.add(file.getName());
 		
 		return Files;
