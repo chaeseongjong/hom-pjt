@@ -18,7 +18,7 @@ public class CareerDetailsController {
 	 */
 	@RequestMapping(value = "/CareerDetails")
 	public String CareerDetails() {
-		logger.info("°æ·Â ÆäÀÌÁö Á¢¼Ó");
+		logger.info("ì»¤ë¦¬ì–´ í™”ë©´ ì ‘ì†");
 		return "board/CareerDetails";
 	}
 	

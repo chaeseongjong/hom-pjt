@@ -5,21 +5,16 @@ import java.util.ArrayList;
 
 public class DownloadServiceImpl implements DownloadService{
 	
-	//ÆÄÀÏ °æ·Î
-	final String Path = "F:/URL";
+	//íŒŒì¼ ê²½ë¡œ
+	final String Path = "D:/URL";
 	@Override
 	public ArrayList<String> getFileList(){
 		
-		//ArrayList<DownloadSVO> Files = new ArrayList<DownloadSVO>(); È®Àå¼ºÀ» À§ÇØ¼­...(³ªÁß¿¡ ´Ù¸¥Á¤º¸¸¦ ³Ö¾î¾ß ÇÒÁö ¸ğ¸£´Ï.....)
 		ArrayList<String> Files = new ArrayList<String>();
-		// Æú´õ 
 		File Folder = new File(Path);
-		// Æú´õ°¡ ¾øÀ¸¸é return Null; 
+		// íŒŒì¼ ì—†ìœ¼ë©´ null ë¦¬í„´
 		if(!Folder.isDirectory()) return null;
-		// ÆÄÀÏ ¸®½ºÆ® °¡Á®¿À±â
 		File[] Filelist = Folder.listFiles();
-		// ÆÄÀÏ ¸®½ºÆ®¿¡¼­ ÆÄÀÏÀÌ ÀÖÀ¸¸é Files °´Ã¼¿¡ ÆÄÀÏ ÀÌ¸§ ³Ö±â
-		//for(File file:Filelist) if(file.isFile()) Files.add(new DownloadSVO(file.getName()));È®Àå¼ºÀ» À§ÇØ¼­...
 		for(File file:Filelist) if(file.isFile()) Files.add(file.getName());
 		
 		return Files;
@@ -27,14 +22,13 @@ public class DownloadServiceImpl implements DownloadService{
 	}
 	
 
-	//ÆÄÀÏ ´Ù¿î ·Îµå
+	// íŒŒì¼ ë‹¤ìš´ë¡œë“œ 
 	@Override
 	public String FileDownLoad(String fileName) {
 		
 		ArrayList<String> FileList = getFileList();
-		
+		//íŒŒì¼ ì´ë¦„ ì—†ì„ ì‹œ 
 		for(String file:FileList) if(file.equals(fileName)) return Path + "/" + file;
-		// ÆÄÀÏÀÌ ¾øÀ» ¶§ null ¸®ÅÏ
 		return null;
 	}
 

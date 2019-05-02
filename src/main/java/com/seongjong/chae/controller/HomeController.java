@@ -18,7 +18,7 @@ public class HomeController {
 	 */
 	@RequestMapping(value = "/")
 	public String home() {
-		logger.info("器飘弃府坷 其捞瘤 立加");
+		logger.info("氅旍澑 韼橃澊歆� 鞝戩啀");
 		return "board/home";
 	}
 	

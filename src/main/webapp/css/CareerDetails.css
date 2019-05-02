@@ -1,6 +1,10 @@
  .CareerDetails{
     position: relative;
-	padding : 50px
+	padding : 50px;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    margin-right: 150px;
+    margin-left: 276px;
 }
 
 

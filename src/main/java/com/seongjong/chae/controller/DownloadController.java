@@ -29,7 +29,7 @@ public class DownloadController {
 	
 	@RequestMapping(value = "/download")
 	public String download(Model model) {
-		logger.info("´Ù¿î·Îµå ÆäÀÌÁö Á¢¼Ó .");
+		logger.info("ë‹¤ìš´ë¡œë“œ í˜ì´ì§€ ì ‘ì†");
 		
 		DownloadServiceImpl downloadServiceImpl = new DownloadServiceImpl();
 		ArrayList<String> fileList = downloadServiceImpl.getFileList();
@@ -40,13 +40,13 @@ public class DownloadController {
 	
 	@RequestMapping(value="/FileDownload") 
 	public Object downloadFile(HttpServletRequest request, HttpServletResponse response) throws Exception{ 
-		// Å¬¶óÀÌ¾ğÆ®¿¡¼­ ¹ŞÀº ÆÄÀÏ ÀÌ¸§
+		// Å¬ï¿½ï¿½ï¿½Ì¾ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½
 		String FileName = request.getParameter("selectFile");
 		DownloadServiceImpl downloadServiceImpl = new DownloadServiceImpl();
 		String CheckFile = downloadServiceImpl.FileDownLoad(FileName);
 		Map<String,Object>  resultMap = new HashMap<String,Object>();
 		
-		if(CheckFile == null) return resultMap.put("result","ÆÄÀÏÀÌ ¾ø½À´Ï´Ù.");
+		if(CheckFile == null) return resultMap.put("result","ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 		
 		byte fileByte[] = FileUtils.readFileToByteArray(new File(CheckFile)); 
 		response.setContentType("application/octet-stream"); 
