@@ -19,7 +19,7 @@ public class HomeController {
 	@RequestMapping(value = "/")
 	public String home() {
 		logger.info("메인 페이지 접속");
-		return "board/home";
+		return "/index";
 	}
 	
 }
